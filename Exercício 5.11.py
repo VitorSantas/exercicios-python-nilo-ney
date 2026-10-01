@@ -3,23 +3,29 @@ de juros de uma poupança. Exiba os valores mês a mês para os 24 primeiros
 meses. Escreva o total ganho com juros no período.
 '''
 
-contato = 1
+deposito_inicial = float(input("Depósito inicial: R$ "))
+taxa_juros = float(input("Taxa de juros (% ao mês): "))
 
+saldo = deposito_inicial
+mes = 1
 
-deposito = float(input("Qual o valo do seu depósito? R$ ").replace(",","."))
-juros = float(input("Quando de juros por mês? ").replace(",","."))
-juros = juros / 100
-juros_total = deposito * juros
-total_mes = deposito + juros_total
+print(f"\n{'Mês':>4} {'Saldo':>12} {'Juros do mês':>15}")
+print("-" * 35)
 
-while contato <= 24:
+while mes <= 24:
+    juros_mes = saldo * (taxa_juros / 100)
+    saldo = saldo + juros_mes
     
-    print(f"{contato}° mês redeu R$ {juros_total:.2f}\nDo valor em conta de R$ {deposito}\nNo total ficou R$ {total_mes:.2f} ")
-    print("")
+    print(f"{mes:>4} R$ {saldo:>9.2f} R$ {juros_mes:>10.2f}")
+    
+    mes = mes + 1
 
-    juros_total = juros_total * total_mes
-    total_mes = total_mes + juros_total
-    contato = contato + 1
+total_ganho = saldo - deposito_inicial
+
+print("-" * 35)
+print(f"Depósito inicial: R$ {deposito_inicial:.2f}")
+print(f"Saldo após 24 meses: R$ {saldo:.2f}")
+print(f"Total ganho com juros: R$ {total_ganho:.2f}")
 
 
 '''

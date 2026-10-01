@@ -13,5 +13,38 @@ Código Preço
 Seu programa deve exibir o total das compras depois que o usuário digitar
 0. Qualquer outro código deve gerar a mensagem de erro “Código inválido”.'''
 
-produto = int(input("Qual o código do produto? "))
-preco = 
+total_de_produto = 0
+total_de_preco = 0
+
+while True:
+    
+    produto = int(input("Qual o código do produto? "))
+    if produto == 0:
+        break
+
+    quantidade = int(input("Quantos produtos? "))
+
+    if produto == 1:
+        preco_unitario = 0.50
+
+    elif produto == 2:
+        preco_unitario = 1
+
+    elif produto == 3:
+        preco_unitario = 4
+
+    elif produto == 5:
+        preco_unitario = 7
+
+    elif produto == 9:
+        preco_unitario = 8
+
+    else:
+        print("Código inválido")
+        continue
+
+
+    total_de_preco += preco_unitario * quantidade
+    total_de_produto += quantidade
+
+print(f"Sua compra ficou no total de R$ {total_de_preco} \nVocê comprou o total de {total_de_produto} produtos")
