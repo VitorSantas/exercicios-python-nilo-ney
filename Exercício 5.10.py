@@ -1,0 +1,38 @@
+'''Modifique o programa anterior para que aceite respostas com
+letras maiúsculas e minúsculas em todas as questões.
+
+pontos = 0
+questao = 1
+
+while questao <4:
+    resposta = input(f'Respota da questão {questao}: ')
+    if questao == 1 and resposta == "b":
+        pontos = pontos + 1
+
+    if questao == 2 and resposta == "a":
+        pontos = pontos + 1
+
+    if questao == 3 and resposta == "d":
+        pontos = pontos + 1
+
+    questao = questao + 1
+
+print(f"O aluno faz {pontos} ponto(s)")'''
+
+pontos = 0
+questao = 1
+
+while questao <4:
+    resposta = input(f'Respota da questão {questao}: ')
+    if questao == 1 and resposta == "b" or resposta == "B":
+        pontos = pontos + 1
+
+    if questao == 2 and resposta == "a" or resposta == "A":
+        pontos = pontos + 1
+
+    if questao == 3 and resposta == "d" or resposta == "D":
+        pontos = pontos + 1
+
+    questao = questao + 1
+
+print(f"O aluno faz {pontos} ponto(s)")
